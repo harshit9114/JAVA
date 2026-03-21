@@ -5,7 +5,7 @@ class Solution {
         int i = 0;
         while (i < nums.length) {
             int start = nums[i];
-            int[] res = new int[nums.length - i];
+            int[] res = new int[nums.length];
             for (int k = 0; k < res.length; k++) {
                 res[k] = start + k;
             }
@@ -14,7 +14,6 @@ class Solution {
                 i++;
                 j++;
             }
-
             int end = nums[i - 1];
             String s = String.valueOf(start);
             String t = String.valueOf(end);
