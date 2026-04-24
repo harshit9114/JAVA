@@ -24,7 +24,7 @@ class Solution {
                 }
                 low++;
             }
-           
+          
                 int len= high-low+1;
                 result=Math.max(result,len);
             
