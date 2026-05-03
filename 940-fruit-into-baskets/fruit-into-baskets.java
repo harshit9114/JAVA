@@ -10,11 +10,8 @@ class Solution {
         HashMap<Integer,Integer> map = new HashMap<>();
         while(high<fruits.length){
             map.put(fruits[high],map.getOrDefault(fruits[high],0)+1);
-            int a= map.get(fruits[high]);
-            sum+=a;
             while(map.size()>2){
                 int f=map.get(fruits[low]);
-                sum-=f;
                 f--;
                 if(f==0){
                     map.remove(fruits[low]);
