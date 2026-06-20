@@ -6,9 +6,6 @@ class Solution {
         int count1=0;
         int f=A;
         int g=B;
-        if(plants.length==1){
-            return 0;
-        }
         while(i<j){
             if(plants[i]<=A){
                 A-=plants[i];
@@ -16,7 +13,8 @@ class Solution {
             }
             else if(plants[i]>A){
                 count++;
-                A=f-plants[i];
+                A=f;
+                A-=plants[i];
                 i++;
             }
             if(plants[j]<=B){
@@ -25,7 +23,8 @@ class Solution {
             }
             else if(plants[j]>B){
                 count1++;
-                B=g-plants[j];
+                B=g;
+                B-=plants[j];
                 j--;
             }
              if(i==j){
