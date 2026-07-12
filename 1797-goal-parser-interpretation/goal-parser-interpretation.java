@@ -12,6 +12,7 @@ class Solution {
                         n.append(c);
                     }
                 }
+              
                 str.append(n.reverse());
             }
             else if(!st.isEmpty() &&  s.charAt(i)==')' && st.peek()!='('){
@@ -28,8 +29,8 @@ class Solution {
             }
         }
         if(!st.isEmpty()){
-             StringBuilder rem = new StringBuilder();
-            while (!st.isEmpty()) {
+            StringBuilder rem = new StringBuilder();
+            while(!st.isEmpty()){
                 rem.append(st.pop());
             }
             str.append(rem.reverse());
