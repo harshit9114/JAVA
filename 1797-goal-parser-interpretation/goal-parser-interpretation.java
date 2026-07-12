@@ -12,8 +12,7 @@ class Solution {
                         n.append(c);
                     }
                 }
-                n.reverse();
-                str.append(n);
+                str.append(n.reverse());
             }
             else if(!st.isEmpty() &&  s.charAt(i)==')' && st.peek()!='('){
                 while (!st.isEmpty()){
@@ -22,8 +21,7 @@ class Solution {
                         n.append(c);
                     }
                 }
-                 n.reverse();
-                str.append(n);
+                str.append(n.reverse());
             }
             else{
                 st.push(s.charAt(i));
