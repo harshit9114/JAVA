@@ -14,18 +14,20 @@
  * }
  */
 class Solution {
-    public void order(TreeNode n,ArrayList<Integer>l){
+    public void order(TreeNode n,ArrayList<Integer> l){
         if(n==null){
             return;
         }
+       
         order(n.left,l);
         order(n.right,l);
-        l.add(n.val);
+         l.add(n.val);
         return;
     }
     public List<Integer> postorderTraversal(TreeNode root) {
-        ArrayList<Integer> l = new ArrayList<>();
+        ArrayList<Integer> l= new ArrayList<>();
         order(root,l);
         return l;
+        
     }
 }
