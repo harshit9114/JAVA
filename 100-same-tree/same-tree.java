@@ -14,7 +14,7 @@
  * }
  */
 class Solution {
-    public boolean order(TreeNode n, TreeNode m ){
+     public boolean order(TreeNode n, TreeNode m ){
         if(n==null && m== null) return true;
         if(n==null || m==null) return false;
         if(n.val!=m.val) return false;
@@ -26,6 +26,6 @@ class Solution {
         return false;
     }
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        return order( p,q );
+        return order(p,q);
     }
 }
