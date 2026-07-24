@@ -39,14 +39,10 @@ class Solution {
             res.add(sum);
         }
     Collections.sort(res);
-    long ans=0;
     if(res.size()<k){
         return -1;
     }
-    for(int i=res.size()-1;i>=res.size()-k;i--){
-        ans=res.get(i);
-    }
-    return  ans;
+    return  res.get(res.size()-k);
         
     }
 }
