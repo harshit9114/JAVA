@@ -15,23 +15,27 @@
  */
 class Solution {
     ArrayList<String > l = new ArrayList<>();
-    public void order(TreeNode n ,String path){
+    ArrayList<Integer> a= new ArrayList<>();
+    public void order(TreeNode n){
         if(n==null) return;
-        if(path.length()==0){ path=String.valueOf(n.val);}
-        else{
-        path=String.valueOf(path+"->"+n.val);
-        }
+       a.add(n.val);
         if(n.left==null && n.right==null){
-                l.add(path);  
+               String s="";
+               for(int i=0;i<a.size();i++){
+                s+=String.valueOf(a.get(i));
+                if(i!=a.size()-1){
+                    s+="->";
+                }
+               }
+               l.add(s);
             }
-        
-        order(n.left,path);
-        order(n.right,path);
-    }
+        order(n.left);
+        order(n.right);
+        a.remove(a.size()-1);
     
+    }
     public List<String> binaryTreePaths(TreeNode root) {
-        String path;
-        order(root,"");
+        order(root);
         return l;
         
     }
