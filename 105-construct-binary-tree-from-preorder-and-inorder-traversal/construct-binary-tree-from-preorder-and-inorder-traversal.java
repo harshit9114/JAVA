@@ -15,24 +15,27 @@
  */
 class Solution {
     int idx=0;
-    public int search( int[] inorder,int val,int left,int right){
-        for(int i=left;i<=right;i++){
-            if(inorder[i]==val){
-                return i;
-            }
+    public int search(int [] inorder, int val,int left,int right){
+        for(int i=0;i<inorder.length;i++){
+        if(inorder[i]==val){
+            return i;
+        }    
         }
         return -1;
     }
-    public TreeNode build(int[] preorder, int[] inorder,int left,int right){
-        if(left>right) return null;
-    TreeNode root=new TreeNode(preorder[idx]);
-    int preidx=search(inorder,preorder[idx],left,right);
-    idx++;
-    root.left=build(preorder,inorder,left,preidx-1);
-    root.right=build(preorder,inorder,preidx+1,right);
-    return root;
-}
+    public TreeNode build(int [] preorder, int[] inorder, int left, int right){;
+        if(left>right){
+            return null;
+        }
+           TreeNode root  = new TreeNode(preorder[idx]);
+        int index=search(inorder, preorder[idx],left,right);
+        idx++;
+        root.left=build( preorder,inorder,left,index-1);
+        root.right=build(preorder,inorder,index+1,right);
+        return root;
+    }
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-      return build(preorder,inorder,0,inorder.length-1);
+        return build(preorder,inorder,0,inorder.length-1);
+        
     }
 }
