@@ -14,20 +14,23 @@
  * }
  */
 class Solution {
-    int ans=1578465;
-    public void order(TreeNode n, int count){
-        if(n==null) return ;
+    int max=0;
+    public void order(TreeNode n,int count){
+        if( n==null) return;
         count++;
         if(n.left==null && n.right==null){
-            ans=Math.min(count,ans);
+         if(max==0){   max=count;
+         }
+         else{
+         max= Math.min(count,max);
         }
-        order(n.left,count);
-        order(n.right,count);
+        }
+       order(n.left,count);
+       order(n.right,count);
+       return;
     }
     public int minDepth(TreeNode root) {
-        int count=0;
-        if(root==null) return 0;
-        order(root,count);
-        return ans;
+     order(root,0);
+     return max;   
     }
 }
